@@ -64,15 +64,24 @@ CYPRESS/
 -----------------------
 
 `git clone REPO-PATH`
+
 `npm install`
 
 
-Choose one command:
-    `cypress:open-prod`: Open Cypress based on PRODUCTION environment
-    `cypress:open-stg`: Open Cypress based on STAGE environment
-    `cypress:chrome-prod`: Execute Cypress tests based on PRODUCTION environment
-    `cypress:chrome-smoke-prod`: Execute Cypress tests based on PRODUCTION environment and Test Name
-    `cypress:chrome-smoke-stg`: Execute Cypress tests based on STAGE environment and Test Name
-    `cypress:firefox`: Execute Cypress tests based on FIREFOX browser
-    `cypress:webkit`: Execute Cypress tests based on WEBKIT browser
-    `cypress:edge` : Execute Cypress tests based on EDGE browser
+### Choose one command:
+
+`cypress:open-prod`: Open Cypress based on PRODUCTION environment
+
+`cypress:open-stg`: Open Cypress based on STAGE environment
+
+`cypress:chrome-prod`: Execute Cypress tests based on PRODUCTION environment
+
+`cypress:chrome-smoke-prod`: Execute Cypress tests based on PRODUCTION environment and Test Name
+
+`cypress:chrome-smoke-stg`: Execute Cypress tests based on STAGE environment and Test Name
+
+`cypress:firefox`: Execute Cypress tests based on FIREFOX browser
+
+`cypress:webkit`: Execute Cypress tests based on WEBKIT browser
+
+`cypress:edge` : Execute Cypress tests based on EDGE browser
