@@ -1,7 +1,7 @@
 import ProductDetails from '../support/pages/productDetailsPage.js';
 
 
-describe('Basic specc', () => {
+describe('Basic spec', () => {
 
 
   beforeEach(() => {
@@ -12,7 +12,7 @@ describe('Basic specc', () => {
     //When I access the product page
     //Then the page should display Data Sheet, More Info and Reviews of the product
 
-  it('Basic Cypress', () => {
+  it('Basic Cypress - @smoke', () => {
     //Validate Data Sheet, Row Compositions label, Row Compositions value
     ProductDetails.validateDataSheet();
 
