@@ -1,42 +1,78 @@
-# Simple Example using Cypress E2E tests
-PageObject on `../support/pages/..`
-Tests on `../e2e`
+## Cypress Architecture
+As a Quality Engineer, I want to define code standard on Cypress architecture in order to implement test automation based on User Journey scenarios.
+### 🧩 The framework
+-----------------------
+* [Cypress](https://www.cypress.io/) All-in-one Framework
+* [Mocha](https://mochajs.org/) Library to provide test group (describe) and test functions (it)
+* [Chai](https://www.chaijs.com/) Library to provide assertions
 
-## Clone Project
-`git clone https://github.com/saymowan/cypress-playground`
+### ⚙️ The Architecture UI
+-----------------------
+```
+CYPRESS/
+  ├─  cypress/
+  │    ├── e2e/
+  │    │   └── <name>.cy.js  
+  │    │
+  │    ├── fixtures/
+  │    │   ├── <name>.csv
+  │    │   └── <name>.json  
+  │    │
+  │    ├── support/
+  │    │   ├── pages/
+  │    │   │    ├── <name>Page.js
+  │    │   │    └── <name2>Page.js
+  │    │   │ 
+  │    │   ├── commands.js
+  │    │   └── e2e.js   
+  │    │
+  │    └── videos/
+  │        └── <name>cy.js.mp4        
+  │    
+  ├── .cypress.config.js  
+  ├── .package.json   
+  └── README.md
+```
 
-## From Scratch to Cypress running (not related to this repo, only saving step by step)
-[![npm version](https://camo.githubusercontent.com/eeac3804665f2c05dfaf1d18dff2722db530cde0/68747470733a2f2f62616467652e667572792e696f2f6a732f637970726573732e737667)](https://badge.fury.io/js/cypress)
-Install Cypress for Mac, Linux, or Windows, then  [get started](https://docs.cypress.io/guides/getting-started/installing-cypress.html).
-1. npm init -y
-2. npm i cypress --save-dev
-3. cd ./node_modules/.bin
-4. cypress open
-5. All folder will be generated (cypress..e2e...)
-6. Open package.json and include cypress commands
-    1. "cypress:open" : "cypress open"
-    2. "cypress:run" : "cypress run"
-    3. Now you can execute commands by ~npm run~ 
+### 🗂️ Achitecture layers
+-----------------------
+
+- **e2e:** test files with describe/it functions and expected assertions
+  - **File:** 
+    - **Pattern:** `<name>.cy.js`
+    - **Example:** `signIn.cy.js`
 
 
-## Prepare the dependencies
-install all dependencies from the root directory
+- **fixtures:** files with input data for the tests. It can be used different types of input file (*.csv, *.png, *.js, *.json).
+    - **File:** 
+      - **Pattern:** `<name>.json`
+      - **Example:** `dealer.json`
 
+
+- **pages:** files with selectors mapping and action functions that the selectors executes.
+  - **File:** 
+    - **Pattern:** `<name>Page.js`
+    - **Example:** `signInPage.js`
+
+
+- **commands.js** file to create general group actions, e.g. customize wait element including extra validations or hook function to set environment parameters.
+
+
+- **cypress.config.js:** environment configuration file.
+
+### 🚀 Running Cypress tests
+-----------------------
+
+`git clone REPO-PATH`
 `npm install`
 
-## Opening Cypress GUI (inspect elements, visual execution)
-Opening Cypress GUI and executing tests
 
-`npm run cypress:open` 
-
-
-## Running from the CLI
-`npm run cypress:run`
-
-Switching browser
-
-`npm run cypress:run -- --browser chrome`
-
-Recording test results, videos, screenshots to Cypress dashboard
-
-`npm run cypress:run -- --record`
+Choose one command:
+    `cypress:open-prod`: Open Cypress based on PRODUCTION environment
+    `cypress:open-stg`: Open Cypress based on STAGE environment
+    `cypress:chrome-prod`: Execute Cypress tests based on PRODUCTION environment
+    `cypress:chrome-smoke-prod`: Execute Cypress tests based on PRODUCTION environment and Test Name
+    `cypress:chrome-smoke-stg`: Execute Cypress tests based on STAGE environment and Test Name
+    `cypress:firefox`: Execute Cypress tests based on FIREFOX browser
+    `cypress:webkit`: Execute Cypress tests based on WEBKIT browser
+    `cypress:edge` : Execute Cypress tests based on EDGE browser
