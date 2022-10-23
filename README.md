@@ -34,7 +34,7 @@ CYPRESS/
   └── README.md
 ```
 
-### 🗂️ Achitecture layers
+### 🗂️ Architecture layers
 -----------------------
 
 - **e2e:** test files with describe/it functions and expected assertions
